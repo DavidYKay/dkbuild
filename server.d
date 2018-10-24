@@ -2,10 +2,21 @@ import std.stdio;
 
 string cmd = "run";
 
+int i = 0;
+
 void compileAndRun () {
   import std.process;
   import std.file;
   import std.string;
+
+  i += 1;
+  writeln();
+  writeln();
+  writeln("========================================");
+  "Build %d".format(i).writeln;
+  writeln("========================================");
+  writeln();
+  writeln();
   string sh = "%s/%s".format(getcwd(), cmd);
 
   auto res = spawnShell(sh);
