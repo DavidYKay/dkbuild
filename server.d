@@ -1,4 +1,5 @@
 import std.stdio;
+import std.path: dirSeparator;
 
 string cmd = "run";
 
@@ -17,7 +18,10 @@ void compileAndRun () {
   writeln("========================================");
   writeln();
   writeln();
-  string sh = "%s/%s".format(getcwd(), cmd);
+  string sh = "%s%s%s".format(
+      getcwd(),
+      dirSeparator,
+      cmd);
 
   auto res = spawnShell(sh);
 }
